@@ -3230,14 +3230,38 @@ input:-internal-autofill-selected {
   width: 50px;
 }
 
-.text_L{
-  
-      font-size: 21px;
+.text_L {
+  font-size: 21px;
 }
-.text_m{
-  
+.text_m {
   font-size: 18px;
 }
-.text_color{
-  color: #e80000
+.text_color {
+  color: #e80000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+tr:nth-child(even) {
+  background-color: #f5f5f5;
 }
