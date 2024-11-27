@@ -293,12 +293,6 @@
 
               </tr>
               <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
                 <td>name</td>
                 <td>String</td>
                 <td>Name</td>
@@ -366,6 +360,142 @@
 
     <!-- Log In To User 
      ====================== -->
+      <section id="User_LogIn">
+        <h3>Log In To User</h3>
+        <br>
+        <h5><u>Request </u></h5>
+        <pre>POST api/user/login</pre>
+
+        <table class="mb-4" >
+            <thead>
+              <tr>
+                <th>Parameter</th>
+
+                <th>Required</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>email</td>
+                <td>True</td>
+                <td>String</td>
+                <td>User’s email address</td>
+              </tr>
+              <tr>
+                <td>password</td>
+                <td>True</td>
+                <td>String</td>
+                <td>Login Password</td>
+              </tr>
+            </tbody>
+          </table> 
+          <br>
+          <h5>Request Payload</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+              "email": "normaluser@gmail.com",
+              "password": "123456789"
+            }
+          </pre>
+
+
+          <h5><u> Response </u></h5>
+          <table class="mb-4" >
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>id</td>
+                <td>String</td>
+                <td>Object ID</td>
+              </tr>
+              <tr>
+                <td>status</td>
+                <td>String</td>
+                <td>confirmed or not_confirmed</td>
+              </tr>
+              <tr>
+                <td>is_active</td>
+                <td>Bool</td>
+                <td>Status of the account</td>
+              </tr>
+              <tr>
+                <td>is_first_time</td>
+                <td>Bool</td>
+                <td>Membership status</td>
+              </tr>
+              <tr>
+                <td>name</td>
+                <td>String</td>
+                <td>Name</td>
+              </tr>
+              <tr>
+                <td>dob</td>
+                <td>date</td>
+                <td>Date of birth of the pet</td>
+              </tr>
+              <tr>
+                <td>nic</td>
+                <td>String</td>
+                <td>NIC of the user</td>
+              </tr>
+              <tr>
+                <td>email</td>
+                <td>String</td>
+                <td>Registered email</td>
+              </tr>
+              <tr>
+                <td>password</td>
+                <td>String</td>
+                <td>Password for the account</td>
+              </tr>
+              <tr>
+                <td>is_deleted</td>
+                <td>Bool</td>
+                <td>Showing deleted status</td>
+              </tr>
+
+
+            </tbody>
+          </table>
+          <br>
+          <h5>Response</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+              "status": true,
+              "data": {
+                      "_id": "6744099b4ad7b80bbc3c8b8d",
+                      "status": "not-confirmed",
+                      "is_active": true,
+                      "is_first_time": true,
+                      "is_deleted": false,
+                      "name": "normal user",
+                      "dob": "2000-01-10T00:00:00.000Z",
+                      "nic": "2000093840983490",
+                      "email": "normaluser@gmail.com",
+                      "phone": "07122343482",
+                      "role": "petOwner",
+                      "created_at": "2024-11-25T05:22:36.114Z",
+                      "updated_at": "2024-11-25T05:22:36.114Z",
+                      "__v": 0
+                      },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDQwOTl
+                            iNGFkN2I4MGJiYzNjOGI4ZCIsImVtYWlsIjoibm9ybWFsdXNlckBnbW
+                            FpbC5jb20iLCJyb2xlIjoicGV0T3duZXIiLCJpYXQiOjE3MzI1MTI2OTgs
+                            ImV4cCI6MTczMzExNzQ5OH0.TDTPARs_WtFRUmuVwweuPghAfXsjW
+                            0duKOCRD1-Me3I"
+            }     
+          </pre>
+
+
+      </section>
 
 
 		
@@ -376,7 +506,7 @@
 
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>PUT api/user/</pre>
 
           <table class="mb-4" >
             <thead>
@@ -392,7 +522,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -421,20 +551,20 @@
               </tr>
               <tr>
                 <td>email</td>
-                <td>True</td>
+                <td>False</td>
                 <td>String</td>
                 <td>User’s email address</td>
               </tr>
               <tr>
                 <td>password</td>
-                <td>True</td>
+                <td>False</td>
                 <td>String</td>
                 <td>Login Password</td>
               </tr>
               <tr>
                 <td>phone</td>
                 <td>False</td>
-                <td>String</td>
+                <td>Integer</td>
                 <td>User’s phone number</td>
               </tr>
               <tr>
@@ -447,6 +577,17 @@
             </tbody>
           </table>   
           <br>
+          <h5>Request Payload</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+                "_id": "67440caf4ad7b80bbc3c8b99",
+                "name": "normal user edited",
+                "nic": "200009384083491",
+                "email": "adminuser@gmail.com",
+                "phone": "0713234342"
+
+            }
+          </pre>
 
            <h5><u> Response </u></h5>
        
@@ -461,7 +602,7 @@
             </thead>
             <tbody>
               <tr>
-                <td>id</td>
+                <td>user_id</td>
                 <td>String</td>
                 <td>Object ID</td>
 
@@ -485,26 +626,25 @@
 
               </tr>
               <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
                 <td>name</td>
                 <td>String</td>
                 <td>Date of birth of the pet</td>
                 
               </tr>
               <tr>
+                <td>dob</td>
+                <td>Date</td>
+                <td>Date of birth of the pet</td>
+              </tr>
+              <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
                 
               </tr>
               <tr>
                 <td>email</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>Registered email</td>
                 
               </tr>
@@ -523,6 +663,30 @@
 
             </tbody>
           </table>   
+          <br>
+          <h5>Response</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+                "status": true,
+                "data": {
+                    "status": "not-confirmed",
+                    "is_active": true,
+                    "is_first_time": true,
+                    "is_deleted": false,
+                    "_id": "67440caf4ad7b80bbc3c8b99",
+                    "name": "normal user edited",
+                    "dob": "2000-01-10T00:00:00.000Z",
+                    "nic": "200009384083491",
+                    "email": "adminuser@gmail.com",
+                    "phone": "0713234342",
+                    "role": "superAdmin",
+                    "created_at": "2024-11-25T05:35:43.576Z",
+                    "updated_at": "2024-11-25T05:48:13.972Z",
+                    "__v": 0
+                }
+            }
+  
+          </pre>
         </section>
         
 		<hr class="divider">
@@ -533,7 +697,7 @@
           <h3>Block User</h3>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/block-toggle</pre>
 
           <table class="mb-4" >
             <thead>
@@ -552,58 +716,17 @@
                 <td>Integer</td>
                 <td>User’s given ID</td>
               </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
-
             </tbody>
           </table>   
           <br>
+          <h5>Request Payload</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+                "_id": "67440caf4ad7b80bbc3c8b99"
+            }
+
+          </pre>
+
 
            <h5><u> Response </u></h5>
        
@@ -642,32 +765,31 @@
 
               </tr>
               <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
                 <td>name</td>
                 <td>String</td>
                 <td>Date of birth of the pet</td>
                 
               </tr>
               <tr>
+                <td>dob</td>
+                <td>Date</td>
+                <td>Date of birth of the pet</td>
+              </tr>
+              <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
                 
               </tr>
               <tr>
                 <td>email</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>Registered email</td>
                 
               </tr>
               <tr>
                 <td>password</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>Password for the account</td>
                
               </tr>
@@ -680,8 +802,30 @@
 
             </tbody>
           </table>   
-          
 
+          
+            <h5>Response</h5>
+            <pre class="prettyprint abnformat abnformat-no-print abnformula">
+              {
+                  "status": true,
+                  "data": {
+                      "status": "not-confirmed",
+                      "is_active": false,
+                      "is_first_time": true,
+                      "is_deleted": false,
+                      "_id": "67440caf4ad7b80bbc3c8b99",
+                      "name": "normal user edited",
+                      "dob": "2000-01-10T00:00:00.000Z",
+                      "nic": "200009384083491",
+                      "email": "adminuser@gmail.com",
+                      "phone": "0713234342",
+                      "role": "superAdmin",
+                      "created_at": "2024-11-25T05:35:43.576Z",
+                      "updated_at": "2024-11-25T05:53:55.852Z",
+                      "__v": 0
+                  }
+              }
+            </pre>
         </section>
         
 		<hr class="divider">
@@ -693,7 +837,7 @@
 
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/password/reset</pre>
 
           <table class="mb-4" >
             <thead>
@@ -709,7 +853,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -852,7 +996,7 @@
           <h3>Delete User</h3>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/delete</pre>
 
           <table class="mb-4" >
             <thead>
@@ -868,7 +1012,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -877,51 +1021,17 @@
                 <td>String</td>
                 <td>Username</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
-
             </tbody>
           </table>   
+          <br>
+          <h5>Request Response</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+                "_id": "67440caf4ad7b80bbc3c8b99"
+            }
+
+          </pre>
+
           <br>
 
            <h5><u> Response </u></h5>
@@ -949,56 +1059,23 @@
 
               </tr>
               <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
-                <td>name</td>
+                <td>data</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>Showing deleted status (Success)</td>
               </tr>
-              <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
-              </tr>
+             
+             
+            
 
             </tbody>
           </table>   
+          <h5>Response</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {
+                "status": true,
+                "data": "success"
+            }
+          </pre>
 
         </section>
         
@@ -1007,10 +1084,9 @@
 		<!-- PETS CRUD
 		============================ -->
         <section id="Pet_Crud">
-          <h2>Pet Create CRUD</h2>
-        
-          
+          <h2>Pet Create</h2>
         </section>
+        <hr class="divider">
 		
 		
         <!-- Create Pet
@@ -1665,7 +1741,7 @@
 		  <h2>Create Admin</h2>
       <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/</pre>
 
           <table class="mb-4" >
             <thead>
@@ -1681,7 +1757,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -1690,24 +1766,7 @@
                 <td>String</td>
                 <td>Username</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
+              
               <tr>
                 <td>email</td>
                 <td>True</td>
@@ -1722,20 +1781,32 @@
               </tr>
               <tr>
                 <td>phone</td>
-                <td>False</td>
-                <td>String</td>
+                <td>True</td>
+                <td>Integer</td>
                 <td>User’s phone number</td>
               </tr>
               <tr>
                 <td>role</td>
-                <td>False</td>
+                <td>True</td>
                 <td>String</td>
-                <td>Admin/ Use</td>
+                <td>Admin/ User</td>
               </tr>
 
             </tbody>
           </table>   
           <br>
+          <h5>Request Payload</h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+            {  
+              "user_id":"34thfew9fh" 
+              "name": "normal user",
+              "email": "normaluser@gmail.com",
+              "password": "123456789",
+              "phone": "07122343482",
+              "role": "superAdmin"
+            }
+            </code></pre>
+
 
            <h5><u> Response </u></h5>
        
@@ -1774,14 +1845,14 @@
 
               </tr>
               <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
                 <td>name</td>
                 <td>String</td>
+                <td>Name</td>
+                
+              </tr>
+               <tr>
+                <td>Dob</td>
+                <td>Date</td>
                 <td>Date of birth of the pet</td>
                 
               </tr>
@@ -1812,6 +1883,30 @@
 
             </tbody>
           </table>   
+           <br>
+          <h5>Response</h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+           {
+             "status": true,
+             "data": {
+                      "status": "not-confirmed",
+                      "is_active": true,
+                      "is_first_time": true,
+                      "is_deleted": false,
+                      "_id": "6744099b4ad7b80bbc3c8b8d",
+                      "name": "normal user",
+                      "dob": "2000-01-10T00:00:00.000Z",
+                      "nic": "2000093840983490",
+                      "email": "normaluser@gmail.com",
+                      "phone": "07122343482",
+                      "role": "superAdmin",
+                      "created_at": "2024-11-25T05:22:36.114Z",
+                      "updated_at": "2024-11-25T05:22:36.114Z",
+                      "__v": 0
+                      }
+            }
+            </code></pre>
+         
       
   
 		</section>
@@ -1824,7 +1919,7 @@
 		  <h2>Update Admin</h2>
       <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/</pre>
 
           <table class="mb-4" >
             <thead>
@@ -1840,7 +1935,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -1849,24 +1944,7 @@
                 <td>String</td>
                 <td>Username</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
+              
               <tr>
                 <td>email</td>
                 <td>True</td>
@@ -1880,16 +1958,10 @@
                 <td>Login Password</td>
               </tr>
               <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
                 <td>role</td>
                 <td>False</td>
                 <td>String</td>
-                <td>Admin/ Use</td>
+                <td>Admin/ User</td>
               </tr>
 
             </tbody>
@@ -1932,17 +2004,17 @@
                 <td>Membership status</td>
 
               </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
+             
               <tr>
                 <td>name</td>
                 <td>String</td>
                 <td>Date of birth of the pet</td>
                 
+              </tr>
+              <tr>
+                <td>DoB</td>
+                <td>Date</td>
+                <td>Date of birth of the pet</td>
               </tr>
               <tr>
                 <td>nic</td>
@@ -2136,13 +2208,13 @@
 		
 		  
 		
-        <!-- Components
+        <!-- Admin Password Update
 		============================ -->
         <section id="Admin_Pass_Update">
           <h2>Update Admin Password</h2>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2158,7 +2230,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -2167,24 +2239,9 @@
                 <td>String</td>
                 <td>Username</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
+              
+             
+              
               <tr>
                 <td>email</td>
                 <td>True</td>
@@ -2197,18 +2254,7 @@
                 <td>String</td>
                 <td>Login Password</td>
               </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+             
 
             </tbody>
           </table>   
@@ -2250,33 +2296,33 @@
                 <td>Membership status</td>
 
               </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
+            
               <tr>
                 <td>name</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
+                <td>Name</td>
                 
               </tr>
               <tr>
+                <td>DoB</td>
+                <td>Date</td>
+                <td>Date of birth</td>
+              </tr>
+              <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
                 
               </tr>
               <tr>
                 <td>email</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>Registered email</td>
                 
               </tr>
               <tr>
                 <td>password</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>Password for the account</td>
                
               </tr>
@@ -2310,7 +2356,7 @@
           <h2>Create Pet Type</h2>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/type/create</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2326,14 +2372,14 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
-                <td>name</td>
-                <td>False</td>
+                <td>pet_type</td>
+                <td>True</td>
                 <td>String</td>
-                <td>Username</td>
+                <td>Type of the Pet</td>
               </tr>
               <tr>
                 <td>dob</td>
@@ -2341,46 +2387,22 @@
                 <td>date</td>
                 <td>Date of Birth</td>
               </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+             
+             
 
             </tbody>
           </table>   
           <br>
+          <h5>
+            Request payload
+          </h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+          {
+              "pet_type": "cow"  
+            }
+
+          </code>
+          </pre>
 
            <h5><u> Response </u></h5>
        
@@ -2407,46 +2429,20 @@
 
               </tr>
               <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
+                <td>created_at</td>
+                <td>Date</td>
+                <td>Created date and time</td>
               </tr>
               <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
-                <td>name</td>
+                <td>updated_at</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
+                <td>Updated date and time</td>
                 
               </tr>
               <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
               </tr>
                <tr>
                 <td>is_deleted</td>
@@ -2457,6 +2453,23 @@
 
             </tbody>
           </table>   
+          
+          <h5><u>Example response</u></h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "is_deleted": false,
+                    "_id": "67442e62672bbc0d6c579eaa",
+                    "pet_type": "cow",
+                    "created_at": "2024-11-25T07:59:30.250Z",
+                    "updated_at": "2024-11-25T07:59:30.250Z",
+                    "__v": 0
+                }
+            }
+
+          </code>
+          </pre>
 
         </section>
         <hr class="divider">
@@ -2467,7 +2480,7 @@
           <h2>Update Pet Type</h2>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/type/update</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2483,7 +2496,7 @@
               <tr>
                 <td>user_id</td>
                 <td>True</td>
-                <td>Integer</td>
+                <td>String</td>
                 <td>User’s given ID</td>
               </tr>
               <tr>
@@ -2493,51 +2506,27 @@
                 <td>Username</td>
               </tr>
               <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>pet_type</td>
                 <td>True</td>
                 <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
+                <td>Type of the Pet</td>
               </tr>
 
             </tbody>
           </table>   
           <br>
+          <h5>
+            Request payload
+          </h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "_id": "67442e62672bbc0d6c579eaa",
+                "pet_type":"cow_edited"
+            }
+
+          </code>
+          </pre>
+
 
            <h5><u> Response </u></h5>
        
@@ -2564,18 +2553,6 @@
 
               </tr>
               <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
                 <td>Dataset status</td>
@@ -2588,32 +2565,38 @@
                 
               </tr>
               <tr>
+                <td>dob</td>
+                <td>date</td>
+                <td>Date of birth</td>
+              </tr>
+              <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
-                
               </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
-              </tr>
+             
 
             </tbody>
           </table>   
+
+          <h5><u>Example response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "is_deleted": false,
+                    "_id": "67442e62672bbc0d6c579eaa",
+                    "pet_type": "cow_edited",
+                    "created_at": "2024-11-25T07:59:30.250Z",
+                    "updated_at": "2024-11-25T08:08:59.256Z",
+                    "__v": 0
+                }
+            }
+          </code>
+          </pre>
+
+<!-- 
+          Updated until this line -->
 
         </section>
         <hr class="divider">
@@ -2624,7 +2607,7 @@
           <h2>Delete Pet Type</h2>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/type/delete/</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2638,59 +2621,12 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>id</td>
                 <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
+                <td>Sting</td>
+                <td> Pet Type ID</td>
               </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+            
 
             </tbody>
           </table>   
