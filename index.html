@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 <link href="assets/images/favicon.png" rel="icon" />
-<title>PetPal API Request-Response Documentation</title>
+<title>PetPal API Documentation</title>
 <meta name="description" content="PetPal API Request-Response Documentation">
 <meta name="author" content="harnishdesign.net">
 
@@ -58,7 +58,7 @@
             />
           </a>
           
-          <span class="ml-2 mr-auto text-2"><b style="font-size:20px">PETPAL</b>
+          <span class="ml-2 mr-auto text-2"><b style="font-size:20px">PetPal</b>
             v1.0</span>
           <!-- Logo End -->
         
@@ -105,16 +105,17 @@
 	============================ -->
 	<div class="idocs-navigation bg-light">
       <class="nav flex-column ">
-        <li class="nav-item"><a class="nav-link active" href="#User_Crud">User CRUD</a>
+        <li class="nav-item"><a class="nav-link active" href="#User_Crud">User</a>
           <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#User_Create">Create User</a></li>
+            <li class="nav-item"><a class="nav-link" href="#User_LogIn">Log In To User</a></li>
             <li class="nav-item"><a class="nav-link" href="#User_Update">Update User</a></li>
             <li class="nav-item"><a class="nav-link" href="#User_Block">Block User</a></li>
             <li class="nav-item"><a class="nav-link" href="#User_Pass_Reset">Password Reset</a></li>
             <li class="nav-item"><a class="nav-link" href="#User_Delete">Delete User</a></li>
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#Pet_Crud">Pet CRUD</a>
+        <li class="nav-item"><a class="nav-link" href="#Pet_Crud">Pet</a>
           <ul class="nav flex-column">
 			<li class="nav-item"><a class="nav-link" href="#Pet_Create">Create Pet</a></li>
 			<li class="nav-item"><a class="nav-link" href="#Pet_Update">Update Pet</a></li>
@@ -123,16 +124,16 @@
 
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#Pet_Admin">Admin CRUD</a>
+        <li class="nav-item"><a class="nav-link" href="#Pet_Admin">Admin</a>
 			    <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#Admin_Create">Create Admin</a></li>
             <li class="nav-item"><a class="nav-link" href="#Admin_Update">Update Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Admin_Delete">Update User By Admins</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Admin_Delete">Update User By Admin</a></li>
             <li class="nav-item"><a class="nav-link" href="#Admin_Pass_Update">Update Password</a></li>
           
           </ul>
 		    </li>
-        <li class="nav-item"><a class="nav-link" href="#Pet_Type_Crud">Pet Types CRUD</a>
+        <li class="nav-item"><a class="nav-link" href="#Pet_Type_Crud">Pet Types</a>
           <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#Create_Pet_Type">Create Pet Type</a></li>
             <li class="nav-item"><a class="nav-link" href="#Pet_Type_Update">Update Pet Type</a></li>
@@ -141,7 +142,7 @@
           </ul>
         </li>
 
-        <li class="nav-item"><a class="nav-link" href="#Pet_Breed_Crud">Pet Breed CRUD</a>
+        <li class="nav-item"><a class="nav-link" href="#Pet_Breed_Crud">Pet Breed</a>
           <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#Create_Breed">Create Breed</a></li>
             <li class="nav-item"><a class="nav-link" href="#Update_Breed">Update Breed</a></li>
@@ -164,7 +165,7 @@
        
         
         <section id="User_Crud">
-          <h1>User CRUD</h1>
+          <h1>User</h1>
           
         </section>
 		<hr class="divider">
@@ -176,7 +177,7 @@
           <h3>Create User</h3>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST api/user/create</pre>
 
           <table class="mb-4" >
             <thead>
@@ -190,27 +191,21 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
                 <td>name</td>
-                <td>False</td>
+                <td>True</td>
                 <td>String</td>
                 <td>Username</td>
               </tr>
               <tr>
                 <td>dob</td>
-                <td>False</td>
+                <td>True</td>
                 <td>date</td>
-                <td>Date of Birth</td>
+                <td>Date of BIrth</td>
               </tr>
               <tr>
                 <td>nic</td>
                 <td>False</td>
-                <td>String</td>
+                <td>True</td>
                 <td>User’s NIC</td>
               </tr>
               <tr>
@@ -233,13 +228,13 @@
               </tr>
               <tr>
                 <td>phone</td>
-                <td>False</td>
+                <td>True</td>
                 <td>String</td>
                 <td>User’s phone number</td>
               </tr>
               <tr>
                 <td>role</td>
-                <td>False</td>
+                <td>True</td>
                 <td>String</td>
                 <td>Admin/ Use</td>
               </tr>
@@ -247,6 +242,19 @@
             </tbody>
           </table>   
           <br>
+          <h5>Request Payload</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+            {   
+              "name": "normal user",
+              "dob" : "2000-01-10",
+              "nic": "2000093840983490",
+              "email": "normaluser@gmail.com",
+              "password": "123456789",
+              "phone": "07122343482",
+              "role": "petOwner"
+            }
+
+          </pre>
 
            <h5><u> Response </u></h5>
        
@@ -293,6 +301,12 @@
               <tr>
                 <td>name</td>
                 <td>String</td>
+                <td>Name</td>
+                
+              </tr>
+               <tr>
+                <td>Dob</td>
+                <td>Date</td>
                 <td>Date of birth of the pet</td>
                 
               </tr>
@@ -323,9 +337,37 @@
 
             </tbody>
           </table>   
+           <br>
+          <h5>Response</h5>
+          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           {
+             "status": true,
+             "data": {
+                      "status": "not-confirmed",
+                      "is_active": true,
+                      "is_first_time": true,
+                      "is_deleted": false,
+                      "_id": "6744099b4ad7b80bbc3c8b8d",
+                      "name": "normal user",
+                      "dob": "2000-01-10T00:00:00.000Z",
+                      "nic": "2000093840983490",
+                      "email": "normaluser@gmail.com",
+                      "phone": "07122343482",
+                      "role": "petOwner",
+                      "created_at": "2024-11-25T05:22:36.114Z",
+                      "updated_at": "2024-11-25T05:22:36.114Z",
+                      "__v": 0
+                      }
+            }
+          </pre>
         </section>
         
 		<hr class="divider">
+
+    <!-- Log In To User 
+     ====================== -->
+
+
 		
         <!-- Update User
 		============================ -->
