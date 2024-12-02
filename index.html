@@ -124,14 +124,14 @@
 
           </ul>
         </li>
-        <li class="nav-item"><a class="nav-link" href="#Pet_Admin">Admin</a>
+        <!-- <li class="nav-item"><a class="nav-link" href="#Pet_Admin">Admin</a>
 			    <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="#Admin_Create">Create Admin</a></li>
             <li class="nav-item"><a class="nav-link" href="#Admin_Update">Update Admin</a></li>
-            <li class="nav-item"><a class="nav-link" href="#Admin_Delete">Update User By Admin</a></li>
+            <li class="nav-item"><a class="nav-link" href="#Admin_Login">Admin Login </a></li>
             <li class="nav-item"><a class="nav-link" href="#Admin_Pass_Update">Update Password</a></li>
           
-          </ul>
+          </ul> -->
 		    </li>
         <li class="nav-item"><a class="nav-link" href="#Pet_Type_Crud">Pet Types</a>
           <ul class="nav flex-column">
@@ -243,7 +243,7 @@
           </table>   
           <br>
           <h5>Request Payload</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           <pre class="prettyprint abnf pretty accordion"><code class=" abnf-required abnf-print">
             {   
               "name": "normal user",
               "dob" : "2000-01-10",
@@ -253,8 +253,7 @@
               "phone": "07122343482",
               "role": "petOwner"
             }
-
-          </pre>
+            </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -333,8 +332,8 @@
           </table>   
            <br>
           <h5>Response</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
-           {
+           <pre class = "prettyprint pretty accordion"><code class = "source code ruby source lang=">
+            {
              "status": true,
              "data": {
                       "status": "not-confirmed",
@@ -353,7 +352,7 @@
                       "__v": 0
                       }
             }
-          </pre>
+           </code></pre>
         </section>
         
 		<hr class="divider">
@@ -393,12 +392,12 @@
           </table> 
           <br>
           <h5>Request Payload</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           <pre class = "ruby"><code class = "source code ruby source lang=">
             {
               "email": "normaluser@gmail.com",
               "password": "123456789"
             }
-          </pre>
+            </code></pre>
 
 
           <h5><u> Response </u></h5>
@@ -467,7 +466,7 @@
           </table>
           <br>
           <h5>Response</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           <pre class = "ruby"><code class = "source code ruby source lang=">
             {
               "status": true,
               "data": {
@@ -492,11 +491,11 @@
                             ImV4cCI6MTczMzExNzQ5OH0.TDTPARs_WtFRUmuVwweuPghAfXsjW
                             0duKOCRD1-Me3I"
             }     
-          </pre>
+          </code></pre>
 
 
       </section>
-
+      <hr class="divider">
 
 		
         <!-- Update User
@@ -578,7 +577,7 @@
           </table>   
           <br>
           <h5>Request Payload</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           <pre class = "ruby"><code class = "source code ruby source lang=">
             {
                 "_id": "67440caf4ad7b80bbc3c8b99",
                 "name": "normal user edited",
@@ -587,7 +586,7 @@
                 "phone": "0713234342"
 
             }
-          </pre>
+            </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -665,8 +664,8 @@
           </table>   
           <br>
           <h5>Response</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
-            {
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+              {
                 "status": true,
                 "data": {
                     "status": "not-confirmed",
@@ -679,14 +678,14 @@
                     "nic": "200009384083491",
                     "email": "adminuser@gmail.com",
                     "phone": "0713234342",
-                    "role": "superAdmin",
+                    "role": "petOwner",
                     "created_at": "2024-11-25T05:35:43.576Z",
                     "updated_at": "2024-11-25T05:48:13.972Z",
                     "__v": 0
                 }
             }
   
-          </pre>
+            </code></pre>
         </section>
         
 		<hr class="divider">
@@ -720,12 +719,12 @@
           </table>   
           <br>
           <h5>Request Payload</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+          <pre class = "ruby"><code class = "source code ruby source lang=">
             {
                 "_id": "67440caf4ad7b80bbc3c8b99"
             }
 
-          </pre>
+          </code></pre>
 
 
            <h5><u> Response </u></h5>
@@ -805,7 +804,7 @@
 
           
             <h5>Response</h5>
-            <pre class="prettyprint abnformat abnformat-no-print abnformula">
+             <pre class = "ruby"><code class = "source code ruby source lang=">
               {
                   "status": true,
                   "data": {
@@ -825,7 +824,7 @@
                       "__v": 0
                   }
               }
-            </pre>
+            </code></pre>
         </section>
         
 		<hr class="divider">
@@ -1025,12 +1024,12 @@
           </table>   
           <br>
           <h5>Request Response</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+             <pre class = "ruby"><code class = "source code ruby source lang=">
             {
                 "_id": "67440caf4ad7b80bbc3c8b99"
             }
 
-          </pre>
+              </code></pre>
 
           <br>
 
@@ -1070,12 +1069,12 @@
             </tbody>
           </table>   
           <h5>Response</h5>
-          <pre class="prettyprint abnformat abnformat-no-print abnformula">
+           <pre class = "ruby"><code class = "source code ruby source lang=">
             {
                 "status": true,
                 "data": "success"
             }
-          </pre>
+          </code></pre>
 
         </section>
         
@@ -1086,13 +1085,13 @@
         <section id="Pet_Crud">
           <h2>Pet Create</h2>
         </section>
-        <hr class="divider">
+       
 		
 		
         <!-- Create Pet
 		============================ -->
         <section id="Pet_Create">
-          <h2>Create Pet</h2>
+          <h3>Create Pet</h3>
         <h5><u>Request </u></h5>
         <pre>POST api/pets/create</pre>
         <table class="mb-4" >
@@ -1255,10 +1254,10 @@
 		<!-- Update pet
 		============================ -->
         <section id="Pet_Update">
-          <h2>Update Pet Info</h2>
+          <h3>Update Pet Info</h3>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>PUT api/pets/update</pre>
 
           <table class="mb-4" >
             <thead>
@@ -1272,63 +1271,82 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>Pet_id</td>
                 <td>True</td>
+                <td>String</td>
+                <td>Assigned Pet ID</td>
+              </tr>
+              <tr>
+                <td>pet_type</td>
+                <td>False</td>
+                <td>String</td>
+                <td>Type Of The Pet</td>
+              </tr>
+              <tr>
+                <td>pet_name</td>
+                <td>False</td>
+                <td>String</td>
+                <td>Pet name</td>
+              </tr>
+              <tr>
+                <td>pet_birthday</td>
+                <td>False</td>
+                <td>Date</td>
+                <td>Pet Birthday</td>
+              </tr>
+              <tr>
+                <td>pet_age</td>
+                <td>False</td>
                 <td>Integer</td>
-                <td>User’s given ID</td>
+                <td>Age of the pet</td>
               </tr>
               <tr>
-                <td>name</td>
+                <td>pet_breed</td>
                 <td>False</td>
                 <td>String</td>
-                <td>Username</td>
+                <td>Unique ID for Pet Breed</td>
               </tr>
               <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
+                <td>gender</td>
                 <td>False</td>
                 <td>String</td>
-                <td>User’s NIC</td>
+                <td>Male/ Female</td>
               </tr>
               <tr>
-                <td>address</td>
+                <td>pet_weight</td>
+                <td>False</td>
+                <td>Integer</td>
+                <td>Weight of the pet</td>
+              </tr>
+              <tr>
+                <td>pet_image</td>
                 <td>False</td>
                 <td>String</td>
-                <td>Address of the user</td>
+                <td>Profile image of the pet</td>
               </tr>
               <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
+                <td>user_id</td>
                 <td>False</td>
                 <td>String</td>
-                <td>User’s phone number</td>
+                <td>Unique ID for the pet</td>
               </tr>
               <tr>
-                <td>role</td>
+                <td>neck_collar_id</td>
                 <td>False</td>
                 <td>String</td>
-                <td>Admin/ Use</td>
+                <td>Unique ID From the Neck Collar</td>
               </tr>
+              
 
             </tbody>
           </table>   
           <br>
+            <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+              "_id": "67441757db45593c0cfcd895"
+            }
+
+            </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -1414,7 +1432,7 @@
 		============================ -->
 
     <section id="Pet_delete">
-          <h2>Delete Pet</h2>
+          <h3>Delete Pet</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -1573,7 +1591,7 @@
 <!-- Pet Data Get
 		============================ -->
     <section id="Pet_Get">
-          <h2>Get Pet Info</h2>
+          <h3>Get Pet Info</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -1728,16 +1746,16 @@
 		
 
 		
-		<!-- Admin
+		 <!-- Admin
 		============================ -->
-        <section id="Pet_Admin">
+        <!-- <section id="Pet_Admin">
           <h1>Admin Routes</h1>
         
         </section>
-		  
+		   -->
 		<!-- Create Admin
 		============================ -->
-		<section id="Admin_Create">
+		<!-- <section id="Admin_Create">
 		  <h2>Create Admin</h2>
       <br>
           <h5><u>Request </u></h5>
@@ -1797,14 +1815,15 @@
           <br>
           <h5>Request Payload</h5>
           <pre class = "ruby"><code class = "source code ruby source lang=">
-            {  
-              "user_id":"34thfew9fh" 
-              "name": "normal user",
-              "email": "normaluser@gmail.com",
-              "password": "123456789",
-              "phone": "07122343482",
-              "role": "superAdmin"
-            }
+                  {   
+                      "name": "normal user",
+                      "dob" : "2000-01-10",
+                      "nic": "200009384083490",
+                      "email": "adminuser@gmail.com",
+                      "password": "123456789",
+                      "phone": "07132343482",
+                      "role": "superAdmin"
+                  }
             </code></pre>
 
 
@@ -1886,36 +1905,38 @@
            <br>
           <h5>Response</h5>
           <pre class = "ruby"><code class = "source code ruby source lang=">
-           {
-             "status": true,
-             "data": {
-                      "status": "not-confirmed",
-                      "is_active": true,
-                      "is_first_time": true,
-                      "is_deleted": false,
-                      "_id": "6744099b4ad7b80bbc3c8b8d",
-                      "name": "normal user",
-                      "dob": "2000-01-10T00:00:00.000Z",
-                      "nic": "2000093840983490",
-                      "email": "normaluser@gmail.com",
-                      "phone": "07122343482",
-                      "role": "superAdmin",
-                      "created_at": "2024-11-25T05:22:36.114Z",
-                      "updated_at": "2024-11-25T05:22:36.114Z",
-                      "__v": 0
+                    {
+                      "status": true,
+                      "data": {
+                          "status": "not-confirmed",
+                          "is_active": true,
+                          "is_first_time": true,
+                          "is_deleted": false,
+                          "_id": "67440caf4ad7b80bbc3c8b99",
+                          "name": "normal user",
+                          "dob": "2000-01-10T00:00:00.000Z",
+                          "nic": "200009384083490",
+                          "email": "adminuser@gmail.com",
+                          "phone": "07132343482",
+                          "role": "superAdmin",
+                          "created_at": "2024-11-25T05:35:43.576Z",
+                          "updated_at": "2024-11-25T05:35:43.576Z",
+                          "__v": 0
                       }
-            }
+                  }
+
+
             </code></pre>
          
       
   
 		</section>
 		
-		<hr class="divider">
+		<hr class="divider"> -->
 		
 		<!-- Update Admin
 		============================ -->
-		<section id="Admin_Update">
+		<!-- <section id="Admin_Update">
 		  <h2>Update Admin</h2>
       <br>
           <h5><u>Request </u></h5>
@@ -1967,6 +1988,17 @@
             </tbody>
           </table>   
           <br>
+          <h5>Request Payload</h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+           
+                 {
+                "_id": "67440caf4ad7b80bbc3c8b99",
+                "name": "normal user edited",
+                "nic": "200009384083491",
+                "email": "adminuser@gmail.com",
+                "phone": "0713234342"
+                 }
+          </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -2042,21 +2074,44 @@
               </tr>
 
             </tbody>
-          </table>   
+          </table> 
+          <h5>Response</h5>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+              {
+                "status": true,
+                "data": {
+                    "status": "not-confirmed",
+                    "is_active": true,
+                    "is_first_time": true,
+                    "is_deleted": false,
+                    "_id": "67440caf4ad7b80bbc3c8b99",
+                    "name": "normal user edited",
+                    "dob": "2000-01-10T00:00:00.000Z",
+                    "nic": "200009384083491",
+                    "email": "adminuser@gmail.com",
+                    "phone": "0713234342",
+                    "role": "petOwner",
+                    "created_at": "2024-11-25T05:35:43.576Z",
+                    "updated_at": "2024-11-25T05:48:13.972Z",
+                    "__v": 0
+                }
+              }
+          </code></pre>
+          
      
       
 		</section>
 		
-		<hr class="divider">
+		<hr class="divider"> -->
 
 
     <!-- Delete Admin
       ============================= -->
-      <section id="Admin_Delete">
-          <h2>Delete Admin</h2>
+      <!-- <section id="Admin_Login">
+          <h2>Admin Login</h2>
           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+          <pre>POST /api/user/login</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2204,13 +2259,13 @@
             </tbody>
           </table>   
       </section>
-      <hr class="divider">
+      <hr class="divider"> -->
 		
 		  
 		
         <!-- Admin Password Update
 		============================ -->
-        <section id="Admin_Pass_Update">
+        <!-- <section id="Admin_Pass_Update">
           <h2>Update Admin Password</h2>
           <br>
           <h5><u>Request </u></h5>
@@ -2339,7 +2394,7 @@
       
         </section>
 		 
-        <hr class="divider">
+        <hr class="divider">  -->
 
           <!-- Pet Type CRUD
 		============================ -->
@@ -2353,7 +2408,7 @@
           <!-- Pet Type Create
 		============================ -->
         <section id="Create_Pet_Type">
-          <h2>Create Pet Type</h2>
+          <h3>Create Pet Type</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/type/create</pre>
@@ -2477,7 +2532,7 @@
           <!-- Pet Type Update
 		============================ -->
         <section id="Pet_Type_Update">
-          <h2>Update Pet Type</h2>
+          <h3>Update Pet Type</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/type/update</pre>
@@ -2604,7 +2659,7 @@
           <!-- Pet Type Delete
 		============================ -->
         <section id="Pet_Type_Delete">
-          <h2>Delete Pet Type</h2>
+          <h3>Delete Pet Type</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/type/delete/</pre>
@@ -2714,7 +2769,7 @@
           <!-- Pet Type Get
 		============================ -->
         <section id="Pet_Type_Get">
-          <h2>Get Pet Type Info</h2>
+          <h3>Get Pet Type Info</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -2881,7 +2936,7 @@
 		============================ -->
 
 		  <section id="Create_Breed">
-        <h2>Create Breed </h2>
+        <h3>Create Breed </h3>
 
         <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -3038,7 +3093,7 @@
     <!-- Pet Breed Update
     ============================= -->
       <section id="Update_Breed">
-        <h2>Update breed</h2>
+        <h3>Update breed</h3>
         <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -3196,7 +3251,7 @@
       <!-- Pet Breed Delete
         ============================= -->
         <section id="Delete_Breed">
-          <h2>Delete Breed</h2>
+          <h3>Delete Breed</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -3353,7 +3408,7 @@
         <!-- Pet Breed Get
         ============================= -->
         <section id="Get_Breed">
-          <h2>Get Breed Info</h2>
+          <h3>Get Breed Info</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
@@ -3521,7 +3576,7 @@
         ============================= -->
 
         <section id="Get_Sensor_data">
-          <h2>Get Sensor Data</h2>
+          <h3>Get Sensor Data</h3>
           <br>
           <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
