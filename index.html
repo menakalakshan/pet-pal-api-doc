@@ -176,8 +176,10 @@
 
           <h3>Create User</h3>
           <br>
-          <h5><u>Request </u></h5>
           <pre>POST api/user/create</pre>
+          <br>
+          <h5><u>Request </u></h5>
+          
 
           <table class="mb-4" >
             <thead>
@@ -208,12 +210,12 @@
                 <td>True</td>
                 <td>User’s NIC</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>address</td>
                 <td>False</td>
                 <td>String</td>
                 <td>Address of the user</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>email</td>
                 <td>True</td>
@@ -305,7 +307,7 @@
               </tr>
               <tr>
                 <td>nic</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>NIC of the user</td>
                 
               </tr>
@@ -315,12 +317,12 @@
                 <td>Registered email</td>
                 
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>password</td>
                 <td>Integer</td>
                 <td>Password for the account</td>
                
-              </tr>
+              </tr> -->
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -362,8 +364,10 @@
       <section id="User_LogIn">
         <h3>Log In To User</h3>
         <br>
-        <h5><u>Request </u></h5>
         <pre>POST api/user/login</pre>
+        <br>
+        <h5><u>Request </u></h5>
+        
 
         <table class="mb-4" >
             <thead>
@@ -450,11 +454,11 @@
                 <td>String</td>
                 <td>Registered email</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>password</td>
                 <td>String</td>
                 <td>Password for the account</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
@@ -502,10 +506,11 @@
 		============================ -->
         <section id="User_Update">
           <h3>Update User</h3>
-
+          <br>
+          <pre>PUT api/user/</pre>
           <br>
           <h5><u>Request </u></h5>
-          <pre>PUT api/user/</pre>
+          
 
           <table class="mb-4" >
             <thead>
@@ -542,12 +547,12 @@
                 <td>String</td>
                 <td>User’s NIC</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>address</td>
                 <td>False</td>
                 <td>String</td>
                 <td>Address of the user</td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>email</td>
                 <td>False</td>
@@ -647,12 +652,12 @@
                 <td>Registered email</td>
                 
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>password</td>
                 <td>Integer</td>
                 <td>Password for the account</td>
                
-              </tr>
+              </tr> -->
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -695,8 +700,10 @@
         <section id="User_Block">
           <h3>Block User</h3>
           <br>
+           <pre>POST api/user/block-toggle</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/user/block-toggle</pre>
+         
 
           <table class="mb-4" >
             <thead>
@@ -786,12 +793,12 @@
                 <td>Registered email</td>
                 
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>password</td>
                 <td>String</td>
                 <td>Password for the account</td>
                
-              </tr>
+              </tr> -->
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -835,8 +842,10 @@
           <h3>User Password Reset</h3>
 
           <br>
+          <pre>POST api/user/password/user/reset</pre>
+          <br>
+
           <h5><u>Request </u></h5>
-          <pre>POST api/user/password/reset</pre>
 
           <table class="mb-4" >
             <thead>
@@ -850,63 +859,40 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>_id</td>
                 <td>True</td>
                 <td>String</td>
                 <td>User’s given ID</td>
               </tr>
+              
               <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
+                <td>current_password</td>
                 <td>True</td>
                 <td>String</td>
                 <td>Login Password</td>
               </tr>
+              
+            
               <tr>
-                <td>phone</td>
-                <td>False</td>
+                <td>new_password</td>
+                <td>True</td>
                 <td>String</td>
-                <td>User’s phone number</td>
+                <td>New Password</td>
               </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+            
+              
 
             </tbody>
           </table>   
           <br>
+          <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+              "current_password" : "password123",  
+              "new_password" : "11111111",  
+              "_id": "67440caf4ad7b80bbc3c8b99"
+            }
+
+              </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -984,6 +970,14 @@
             </tbody>
           </table>   
 
+          <h5>Response</h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+              "status": true,
+              "data": "success"
+            }
+           </code></pre>
+
          
         </section>
         
@@ -994,8 +988,10 @@
         <section id="User_Delete">
           <h3>Delete User</h3>
           <br>
+           <pre>DELETE api/user/delete</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/user/delete</pre>
+         
 
           <table class="mb-4" >
             <thead>
@@ -1009,17 +1005,12 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>_id</td>
                 <td>True</td>
                 <td>String</td>
                 <td>User’s given ID</td>
               </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
+              
             </tbody>
           </table>   
           <br>
@@ -1092,8 +1083,11 @@
 		============================ -->
         <section id="Pet_Create">
           <h3>Create Pet</h3>
+          <br>
+           <pre>POST api/pets/create</pre>
+           <br>
         <h5><u>Request </u></h5>
-        <pre>POST api/pets/create</pre>
+       
         <table class="mb-4" >
             <thead>
               <tr>
@@ -1150,7 +1144,7 @@
               <tr>
                 <td>pet_image</td>
                 <td>True</td>
-                <td>Img</td>
+                <td>String</td>
                 <td>Profile image of the pet</td>
               </tr>
               <tr>
@@ -1170,7 +1164,23 @@
           </table>   
           <br>
 
-           <h5><u> Response </u></h5>
+           <h5><u> Request </u></h5>
+            <pre class = "ruby"><code class = "source code ruby source lang=">
+                {
+                    "pet_type": "667a6911c289e125048f0f96",
+                    "pet_name": "puppy",
+                    "pet_birthday": "2020-01-01",
+                    "pet_breed": "66770b3054a5052be49dad4c",
+                    "gender": "male",
+                    "pet_weight":30,
+                    "pet_image": "idshfisudfhisu.jpg",
+                    "user_id": "66770b3054a5052be49dad4c"
+
+                }
+          </code></pre>
+
+
+          <h5><u> Response </u></h5>
        
 
           <table class="mb-4" >
@@ -1244,8 +1254,31 @@
               </tr>
 
             </tbody>
-          </table>   
-
+          </table> 
+          
+          <h5>Request</h5>
+            <pre class = "ruby"><code class = "source code ruby source lang=">
+                {
+                    "status": true,
+                    "data": {
+                        "pet_img_with_bg": null,
+                        "isRendered": false,
+                        "is_deleted": false,
+                        "_id": "67441757db45593c0cfcd895",
+                        "pet_type": "667a6911c289e125048f0f96",
+                        "pet_name": "puppy",
+                        "pet_birthday": "2020-01-01T00:00:00.000Z",
+                        "pet_breed": "66770b3054a5052be49dad4c",
+                        "gender": "male",
+                        "pet_weight": "30",
+                        "pet_image": "idshfisudfhisu.jpg",
+                        "user_id": "66770b3054a5052be49dad4c",
+                        "created_at": "2024-11-25T06:21:11.696Z",
+                        "updated_at": "2024-11-25T06:21:11.696Z",
+                        "__v": 0
+                        }
+                }
+          </code></pre>
 
         </section>
 
@@ -1256,8 +1289,10 @@
         <section id="Pet_Update">
           <h3>Update Pet Info</h3>
           <br>
+           <pre>PUT api/pets/update</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>PUT api/pets/update</pre>
+         
 
           <table class="mb-4" >
             <thead>
@@ -1341,8 +1376,16 @@
             </tbody>
           </table>   
           <br>
+           <h5>Request</h5>
             <pre class = "ruby"><code class = "source code ruby source lang=">
             {
+              "_id": "67441757db45593c0cfcd895",
+              "pet_type": "667a6911c289e125048f0f96",
+              "pet_name": "puppy",
+              "pet_birthday": "2020-01-01T00:00:00.000Z",
+              "pet_breed": "66770b3054a5052be49dad4c",
+              "gender": "male",
+              "pet_weight": "30",
               "_id": "67441757db45593c0cfcd895"
             }
 
@@ -1408,12 +1451,7 @@
                 <td>Registered email</td>
                 
               </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
+              
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -1423,6 +1461,30 @@
 
             </tbody>
           </table>   
+
+          <h5><u> Request </u></h5>
+            <pre class = "ruby"><code class = "source code ruby source lang=">
+                      {
+                "status": true,
+                "data": {
+                    "pet_img_with_bg": null,
+                    "isRendered": false,
+                    "is_deleted": false,
+                    "_id": "67441757db45593c0cfcd895",
+                    "pet_type": "667a6911c289e125048f0f96",
+                    "pet_name": "puppy",
+                    "pet_birthday": "2020-01-01T00:00:00.000Z",
+                    "pet_breed": "66770b3054a5052be49dad4c",
+                    "gender": "male",
+                    "pet_weight": "30",
+                    "pet_image": "idshfisudfhisu.jpg",
+                    "user_id": "6744099b4ad7b80bbc3c8b8d",
+                    "created_at": "2024-11-25T06:21:11.696Z",
+                    "updated_at": "2024-11-25T07:10:53.796Z",
+                    "__v": 0
+                }
+            }
+            </code></pre>
 		 
         </section>
 		
@@ -1434,13 +1496,17 @@
     <section id="Pet_delete">
           <h3>Delete Pet</h3>
           <br>
+           <pre>POST api/pets/delete/</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+         
+          <br>
+
 
           <table class="mb-4" >
             <thead>
               <tr>
-                <th>Parameter</th>
+                <th>Parameter(Path variables)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -1449,63 +1515,20 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>_id</td>
                 <td>True</td>
                 <td>Integer</td>
                 <td>User’s given ID</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
               </tr>
 
             </tbody>
           </table>   
           <br>
+           <h5><u> Request </u></h5>
+              <pre class = "ruby"><code class = "source code ruby source lang=">
+                api/pets/delete/:id
+             </code>
+           </pre>
 
            <h5><u> Response </u></h5>
        
@@ -1567,12 +1590,7 @@
                 <td>Registered email</td>
                 
               </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
+              
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -1581,7 +1599,30 @@
               </tr>
 
             </tbody>
-          </table>   
+          </table>  
+          <h5><u> Request </u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "pet_img_with_bg": null,
+                    "isRendered": false,
+                    "is_deleted": true,
+                    "_id": "67441757db45593c0cfcd895",
+                    "pet_type": "667a6911c289e125048f0f96",
+                    "pet_name": "puppy",
+                    "pet_birthday": "2020-01-01T00:00:00.000Z",
+                    "pet_breed": "66770b3054a5052be49dad4c",
+                    "gender": "male",
+                    "pet_weight": "30",
+                    "pet_image": "idshfisudfhisu.jpg",
+                    "user_id": "6744099b4ad7b80bbc3c8b8d",
+                    "created_at": "2024-11-25T06:21:11.696Z",
+                    "updated_at": "2024-12-03T05:45:56.610Z",
+                    "__v": 0
+                }
+            }
+           </code></pre>
 		 
         </section>
     
@@ -1591,15 +1632,17 @@
 <!-- Pet Data Get
 		============================ -->
     <section id="Pet_Get">
-          <h3>Get Pet Info</h3>
+          <h3>Get All Pet Info </h3>
           <br>
+           <pre>POST api/pets/</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
+         
 
           <table class="mb-4" >
             <thead>
               <tr>
-                <th>Parameter</th>
+                <th>Parameter(query parameters)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -1608,63 +1651,35 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>page</td>
                 <td>True</td>
                 <td>Integer</td>
-                <td>User’s given ID</td>
+                <td>page number user want to go</td>
               </tr>
               <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>Limit</td>
                 <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
+                <td>Integer</td>
+                <td>records per page</td>
               </tr>
               <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
+                <td>user_id</td>
                 <td>False</td>
                 <td>String</td>
-                <td>User’s phone number</td>
+                <td>user id</td>
               </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+             
+            
+             
 
             </tbody>
           </table>   
           <br>
+           <h5><u> Request </u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                api/pets?page=1&limit=10&user_id=6744099b4ad7b80bbc3c8b8d
+             </code>
+           </pre>
 
            <h5><u> Response </u></h5>
        
@@ -1711,25 +1726,20 @@
               <tr>
                 <td>name</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
+                <td>Pet Name</td>
+                
+              </tr>
+              
+              <tr>
+                <td>pet_type</td>
+                <td>String</td>
+                <td> pet type</td>
                 
               </tr>
               <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
+                <td>pet_breed</td>
+                <td>String</td>
+                <td>breed of the pet</td>
                
               </tr>
                <tr>
@@ -1741,6 +1751,43 @@
 
             </tbody>
           </table>   
+          <h5><u> Request </u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                  "status": true,
+                  "data": {
+                      "pets": [
+                          {
+                              "_id": "67441757db45593c0cfcd895",
+                              "pet_img_with_bg": null,
+                              "isRendered": false,
+                              "is_deleted": false,
+                              "pet_type": "667a6911c289e125048f0f96",
+                              "pet_name": "puppy",
+                              "pet_birthday": "2020-01-01T00:00:00.000Z",
+                              "pet_breed": "66770b3054a5052be49dad4c",
+                              "gender": "male",
+                              "pet_weight": "30",
+                              "pet_image": "idshfisudfhisu.jpg",
+                              "user_id": "66770b3054a5052be49dad4c",
+                              "created_at": "2024-11-25T06:21:11.696Z",
+                              "updated_at": "2024-11-25T06:21:11.696Z",
+                              "__v": 0,
+                              "breed": {
+                                  "_id": "66770b3054a5052be49dad4c",
+                                  "breed": "chihuahua"
+                              },
+                              "type": {
+                                  "_id": "667a6911c289e125048f0f96",
+                                  "pet_type": "dog"
+                              }
+                          },
+                        ],
+                      "recordsTotal": 17,
+                      "recordsFiltered": 1
+                  }
+              }
+           </code>
     </section>
     <hr class="divider">
 		
@@ -2410,8 +2457,10 @@
         <section id="Create_Pet_Type">
           <h3>Create Pet Type</h3>
           <br>
-          <h5><u>Request </u></h5>
           <pre>POST api/type/create</pre>
+          <br>
+          <h5><u>Request </u></h5>
+          
 
           <table class="mb-4" >
             <thead>
@@ -2425,35 +2474,23 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
                 <td>pet_type</td>
                 <td>True</td>
                 <td>String</td>
-                <td>Type of the Pet</td>
+                <td>type of the pet</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-             
-             
-
+            
             </tbody>
           </table>   
-          <br>
+           <br>
+
+          
           <h5>
             Request payload
           </h5>
           <pre class = "ruby"><code class = "source code ruby source lang=">
           {
-              "pet_type": "cow"  
+              "pet_type": "Dog"  
             }
 
           </code>
@@ -2476,6 +2513,11 @@
                 <td>String</td>
                 <td>Object ID</td>
 
+              </tr>
+              <tr>
+                <td>pet_type</td>
+                <td>String</td>
+                <td>Type of the pet</td>
               </tr>
               <tr>
                 <td>status</td>
@@ -2494,11 +2536,6 @@
                 <td>Updated date and time</td>
                 
               </tr>
-              <tr>
-                <td>nic</td>
-                <td>String</td>
-                <td>NIC of the user</td>
-              </tr>
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -2516,7 +2553,7 @@
                 "data": {
                     "is_deleted": false,
                     "_id": "67442e62672bbc0d6c579eaa",
-                    "pet_type": "cow",
+                    "pet_type": "Dog",
                     "created_at": "2024-11-25T07:59:30.250Z",
                     "updated_at": "2024-11-25T07:59:30.250Z",
                     "__v": 0
@@ -2534,8 +2571,10 @@
         <section id="Pet_Type_Update">
           <h3>Update Pet Type</h3>
           <br>
+          <pre>PUT api/type/update</pre>
+          <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/type/update</pre>
+          <pre>PUT api/type/update</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2554,15 +2593,10 @@
                 <td>String</td>
                 <td>User’s given ID</td>
               </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
+             
               <tr>
                 <td>pet_type</td>
-                <td>True</td>
+                <td>False</td>
                 <td>String</td>
                 <td>Type of the Pet</td>
               </tr>
@@ -2576,7 +2610,7 @@
           <pre class = "ruby"><code class = "source code ruby source lang=">
             {
                 "_id": "67442e62672bbc0d6c579eaa",
-                "pet_type":"cow_edited"
+                "pet_type":"Dog_edited"
             }
 
           </code>
@@ -2614,21 +2648,13 @@
 
               </tr>
               <tr>
-                <td>name</td>
+                <td>pet_type</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>Type of the Pet</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>date</td>
-                <td>Date of birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>String</td>
-                <td>NIC of the user</td>
-              </tr>
+              
+              
+             
              
 
             </tbody>
@@ -2641,7 +2667,7 @@
                 "data": {
                     "is_deleted": false,
                     "_id": "67442e62672bbc0d6c579eaa",
-                    "pet_type": "cow_edited",
+                    "pet_type": "Dog_edited",
                     "created_at": "2024-11-25T07:59:30.250Z",
                     "updated_at": "2024-11-25T08:08:59.256Z",
                     "__v": 0
@@ -2649,9 +2675,6 @@
             }
           </code>
           </pre>
-
-<!-- 
-          Updated until this line -->
 
         </section>
         <hr class="divider">
@@ -2661,13 +2684,15 @@
         <section id="Pet_Type_Delete">
           <h3>Delete Pet Type</h3>
           <br>
+          <pre>DELETE api/type/delete/</pre>
+          <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/type/delete/</pre>
+          
 
           <table class="mb-4" >
             <thead>
               <tr>
-                <th>Parameter</th>
+                <th>Parameter(path variables)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -2685,8 +2710,11 @@
 
             </tbody>
           </table>   
-          <br>
-
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                    api/type/delete/:id
+          </code>
+          </pre>
            <h5><u> Response </u></h5>
        
 
@@ -2717,12 +2745,7 @@
                 <td>Status of the account</td>
 
               </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
+             
               <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
@@ -2735,24 +2758,6 @@
                 <td>Date of birth of the pet</td>
                 
               </tr>
-              <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
                <tr>
                 <td>is_deleted</td>
                 <td>bool</td>
@@ -2761,8 +2766,21 @@
               </tr>
 
             </tbody>
-          </table>   
-
+          </table>
+          <h5><u>Example response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "is_deleted": true,
+                    "_id": "67442e62672bbc0d6c579eaa",
+                    "name": "Dog_edited",
+                    "created_at": "2024-11-25T07:59:30.250Z",
+                    "updated_at": "2024-11-25T08:08:59.256Z",
+                    "__v": 0
+                }
+            }
+          </code></pre>
         </section>
         <hr class="divider">
 
@@ -2771,13 +2789,14 @@
         <section id="Pet_Type_Get">
           <h3>Get Pet Type Info</h3>
           <br>
+           <pre>GET api/type/</pre>
+           <br>
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
-
           <table class="mb-4" >
+            
             <thead>
               <tr>
-                <th>Parameter</th>
+                 <th>Parameter(query parameters)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -2786,63 +2805,31 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>page</td>
                 <td>True</td>
                 <td>Integer</td>
-                <td>User’s given ID</td>
+                <td>page number user want to go</td>
               </tr>
               <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>Limit</td>
                 <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
+                <td>Integer</td>
+                <td>records per page</td>
               </tr>
               <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
+                <td>user_id</td>
                 <td>False</td>
                 <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
+                <td>user id</td>
               </tr>
 
             </tbody>
-          </table>   
-          <br>
+          </table>
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                    api/type/?page=1&limit=10
+          </code>
+          </pre>
 
            <h5><u> Response </u></h5>
        
@@ -2869,64 +2856,45 @@
 
               </tr>
               <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
-                <td>name</td>
+                <td>pet_type</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>Type of the pet</td>
               </tr>
-              <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
-              </tr>
-
             </tbody>
-          </table>   
-
+          </table>  
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+              "status": true,
+              "data": {
+                  "types": [
+                      {
+                          "_id": "667a6920c289e125048f0f9a",
+                          "pet_type": "hamster",
+                          "created_at": "2024-06-25T06:52:16.939Z",
+                          "updated_at": "2024-06-25T06:52:16.939Z"
+                      },
+                      {
+                          "_id": "667a6911c289e125048f0f96",
+                          "pet_type": "dog",
+                          "created_at": "2024-06-25T06:52:01.872Z",
+                          "updated_at": "2024-06-25T06:52:01.872Z"
+                      }
+                  ],
+                  "recordsTotal": 3,
+                  "recordsFiltered": 2
+              }
+          }
+          </code>
+        </pre>
         </section>
+        <hr class="divider">
 
     
         <!-- Pet Breed
 		============================ -->
     <section id="Pet_Breed_Crud">
-      <h2>Pet Breed CRUD</h2>
+      <h2>Pet Breed</h2>
         </section>
         
 		<hr class="divider">
@@ -2937,9 +2905,10 @@
 
 		  <section id="Create_Breed">
         <h3>Create Breed </h3>
-
+        <br>
+        <pre>POST api/breed/create</pre>
+        <br>
         <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
 
           <table class="mb-4" >
             <thead>
@@ -2953,64 +2922,41 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>type_id</td>
                 <td>True</td>
                 <td>String</td>
-                <td>User’s email address</td>
+                <td>pet type</td>
               </tr>
               <tr>
-                <td>password</td>
+                <td>breed</td>
                 <td>True</td>
                 <td>String</td>
-                <td>Login Password</td>
+                <td>pet breed</td>
               </tr>
               <tr>
-                <td>phone</td>
-                <td>False</td>
+                <td>image</td>
+                <td>true</td>
                 <td>String</td>
-                <td>User’s phone number</td>
+                <td>image of the pet breed type</td>
               </tr>
               <tr>
-                <td>role</td>
-                <td>False</td>
+                <td>description</td>
+                <td>True</td>
                 <td>String</td>
-                <td>Admin/ Use</td>
+                <td>description of the pet breed type</td>
               </tr>
-
             </tbody>
-          </table>   
-          <br>
-
+          </table>
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                    {
+                        "type_id": "667a6911c289e125048f0f96",
+                        "breed": "beagle",
+                        "image": "dfgjfiogjfgio.png",
+                        "description": "this is a dummy bread"
+                    }
+          </code>
+          </pre>
            <h5><u> Response </u></h5>
        
 
@@ -3035,18 +2981,8 @@
                 <td>confirmed or not_confirmed</td>
 
               </tr>
-              <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
+             
+              
               <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
@@ -3054,38 +2990,45 @@
 
               </tr>
               <tr>
-                <td>name</td>
+                <td>Breed</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
+                <td>pet breed</td>
                 
               </tr>
               <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
+                <td>image</td>
+                <td>String</td>
+                <td>image of the breed</td>
                 
               </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
+             
+             
                <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
+                <td>description</td>
+                <td>String</td>
+                <td>description of breed</td>
                
               </tr>
-
             </tbody>
-          </table>   
+          </table>  
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "is_deleted": false,
+                    "_id": "6744293c92522f342c055857",
+                    "type_id": "667a6911c289e125048f0f96",
+                    "breed": "beegle",
+                    "image": "dfgjfiogjfgio.png",
+                    "description": "this is a dummy bread",
+                    "created_at": "2024-11-25T07:37:32.614Z",
+                    "updated_at": "2024-11-25T07:37:32.614Z",
+                    "__v": 0
+                }
+            }
+           </code>
+           </pre>
         </section>
         
 		<hr class="divider">
@@ -3095,8 +3038,10 @@
       <section id="Update_Breed">
         <h3>Update breed</h3>
         <br>
+        <pre>PUT api/breed/update</pre>
+        <br>
+
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
 
           <table class="mb-4" >
             <thead>
@@ -3110,63 +3055,27 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>id</td>
                 <td>True</td>
                 <td>String</td>
-                <td>User’s email address</td>
+                <td>Breed ID</td>
               </tr>
               <tr>
-                <td>password</td>
+                <td>Breed</td>
                 <td>True</td>
                 <td>String</td>
-                <td>Login Password</td>
+                <td>Updated breed</td>
               </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
-
+             
             </tbody>
           </table>   
-          <br>
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "id": "6744293c92522f342c055857",
+                "breed": "beagle_edited"
+            }
+           </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -3193,56 +3102,49 @@
 
               </tr>
               <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
                 <td>Dataset status</td>
-
               </tr>
               <tr>
-                <td>name</td>
+                <td>Breed</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>Updated breed</td>
               </tr>
               <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
+                <td>type_id</td>
+                <td>String</td>
+                <td>pet type ID</td>
               </tr>
                <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
+                <td>created_at</td>
+                <td>Date</td>
+                <td>Date of creation</td>
               </tr>
-
+              <tr>
+                <td>updated_at</td>
+                <td>Date</td>
+                <td>Date of update</td>
+              </tr>
             </tbody>
-          </table>   
+          </table>
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "is_deleted": false,
+                    "_id": "6744293c92522f342c055857",
+                    "type_id": "667a6911c289e125048f0f96",
+                    "breed": "beagle_edited",
+                    "description": "this is a dummy bread",
+                    "created_at": "2024-11-25T07:37:32.614Z",
+                    "updated_at": "2024-11-25T07:37:32.614Z",
+                    "__v": 0
+                }
+            }
+           </code>
+           </pre>
 
       </section>
       <hr class="divider">
@@ -3253,13 +3155,15 @@
         <section id="Delete_Breed">
           <h3>Delete Breed</h3>
           <br>
+          <pre>DELETE api/breed/delete</pre>
+          <br>
+
           <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
 
           <table class="mb-4" >
             <thead>
               <tr>
-                <th>Parameter</th>
+                <th>Parameter(path variable)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -3268,63 +3172,21 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
+                <td>id</td>
                 <td>True</td>
                 <td>String</td>
-                <td>User’s email address</td>
+                <td>breed ID</td>
               </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
+            
+            
 
             </tbody>
           </table>   
-          <br>
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                api/breed/delete/:id
+            
+           </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -3343,25 +3205,7 @@
                 <td>String</td>
                 <td>Object ID</td>
 
-              </tr>
-              <tr>
-                <td>status</td>
-                <td>String</td>
-                <td>confirmed or not_confirmed</td>
-
-              </tr>
-              <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
+              </tr>      
               <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
@@ -3369,38 +3213,44 @@
 
               </tr>
               <tr>
-                <td>name</td>
+                <td>Breed</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>Deleted breed</td>
               </tr>
               <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
+                <td>type_id</td>
+                <td>String</td>
+                <td>pet type ID</td>
               </tr>
               <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
+                <td>created_at</td>
+                <td>Date</td>
+                <td>Date of deletion</td>
               </tr>
               <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
+                <td>updated_at</td>
+                <td>Date</td>
+                <td>Date of deletion</td>
               </tr>
 
+
             </tbody>
-          </table>   
+          </table> 
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                
+                "data": {
+                    "is_deleted": true,
+                    "_id": "6744293c92522f342c055857",
+                    "type_id": "667a6911c289e125048f0f96",
+                    "breed": "beagle_edited",
+                    "created_at": "2024-11-25T07:37:32.614Z",
+                    "updated_at": "2024-11-25T07:37:32.614Z",
+                    "__v": 0
+                }
+            }
+           </code>
 
         </section>
         <hr class="divider">
@@ -3410,13 +3260,15 @@
         <section id="Get_Breed">
           <h3>Get Breed Info</h3>
           <br>
-          <h5><u>Request </u></h5>
           <pre>POST api/breed/create</pre>
+          <br>
+          <h5><u>Request </u></h5>
+          
 
           <table class="mb-4" >
             <thead>
               <tr>
-                <th>Parameter</th>
+                <th>Parameter(query parameters)</th>
 
                 <th>Required</th>
                 <th>Type</th>
@@ -3425,63 +3277,36 @@
             </thead>
             <tbody>
               <tr>
-                <td>user_id</td>
+                <td>_id</td>
                 <td>True</td>
+                <td>String</td>
+                <td>Breed ID</td>
+              </tr>
+              <tr>
+                <td>type_id</td>
+                <td>False</td>
+                <td>String</td>
+                <td>Pet type ID</td>
+              </tr>
+               <tr>
+                <td>limit</td>
+                <td>false</td>
                 <td>Integer</td>
-                <td>User’s given ID</td>
+                <td>Limit the number of returned results per page</td>
               </tr>
               <tr>
-                <td>name</td>
+                <td>page</td>
                 <td>False</td>
-                <td>String</td>
-                <td>Username</td>
+                <td>Integer</td>
+                <td>Page number for pagination</td>
               </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
-
             </tbody>
           </table>   
-          <br>
+          <h5><u>Example Request</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+                api/breed/?limit=3&page=1&_id=6744293c92522f342c055857&type_id=667a6911c289e125048f0f96
+            
+           </code></pre>
 
            <h5><u> Response </u></h5>
        
@@ -3507,18 +3332,7 @@
                 <td>confirmed or not_confirmed</td>
 
               </tr>
-              <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
+             
               <tr>
                 <td>is_deleted</td>
                 <td>Bool</td>
@@ -3526,38 +3340,66 @@
 
               </tr>
               <tr>
-                <td>name</td>
+                <td>type_id</td>
                 <td>String</td>
-                <td>Date of birth of the pet</td>
-                
+                <td>pet type ID</td>
               </tr>
               <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
+                <td>Image</td>
+                <td>String</td>
+                <td>Image URL</td>
               </tr>
               <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
+                <td>breed</td>
+                <td>String</td>
+                <td>Breed name</td>
               </tr>
               <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
+                <td>description</td>
+                <td>String</td>
+                <td>Breed description</td>
               </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
+              <tr>
+                <td>created_at</td>
+                <td>Date</td>
+                <td>Date of creation</td>
               </tr>
-
+              <tr>
+                <td>updated_at</td>
+                <td>Date</td>
+                <td>Date of update</td>
+              </tr>
+           
             </tbody>
           </table>   
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                  "status": true,
+                  "data": {
+                      "breeds": [
+                          {
+                              "_id": "6744293c92522f342c055857",
+                              "is_deleted": false,
+                              "type_id": "667a6911c289e125048f0f96",
+                              "breed": "beegle",
+                              "image": "dfgjfiogjfgio.png",
+                              "description": "this is a dummy bread",
+                              "created_at": "2024-11-25T07:37:32.614Z",
+                              "updated_at": "2024-11-25T07:37:32.614Z",
+                              "__v": 0,
+                              "type": {
+                                  "_id": "667a6911c289e125048f0f96",
+                                  "pet_type": "dog"
+                              }
+                          },
+                      ],
+                      "recordsTotal": 1,
+                      "recordsFiltered": 1
+                  }
+              }
+           </code>
+           </pre>
 
         </section>
         <hr class="divider">
@@ -3578,78 +3420,10 @@
         <section id="Get_Sensor_data">
           <h3>Get Sensor Data</h3>
           <br>
-          <h5><u>Request </u></h5>
-          <pre>POST api/breed/create</pre>
-
-          <table class="mb-4" >
-            <thead>
-              <tr>
-                <th>Parameter</th>
-
-                <th>Required</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>user_id</td>
-                <td>True</td>
-                <td>Integer</td>
-                <td>User’s given ID</td>
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Username</td>
-              </tr>
-              <tr>
-                <td>dob</td>
-                <td>False</td>
-                <td>date</td>
-                <td>Date of Birth</td>
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s NIC</td>
-              </tr>
-              <tr>
-                <td>address</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Address of the user</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>True</td>
-                <td>String</td>
-                <td>User’s email address</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>True</td>
-                <td>String</td>
-                <td>Login Password</td>
-              </tr>
-              <tr>
-                <td>phone</td>
-                <td>False</td>
-                <td>String</td>
-                <td>User’s phone number</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>False</td>
-                <td>String</td>
-                <td>Admin/ Use</td>
-              </tr>
-
-            </tbody>
-          </table>   
+          <pre>Get api/data/get</pre>
           <br>
+          <h5><u>Request </u></h5>
+         
 
            <h5><u> Response </u></h5>
        
@@ -3673,59 +3447,34 @@
                 <td>status</td>
                 <td>String</td>
                 <td>confirmed or not_confirmed</td>
-
               </tr>
-              <tr>
-                <td>is_active</td>
-                <td>Bool</td>
-                <td>Status of the account</td>
-
-              </tr>
-              <tr>
-                <td>is_first_time</td>
-                <td>Bool</td>
-                <td>Membership status</td>
-
-              </tr>
-              <tr>
-                <td>is_deleted</td>
-                <td>Bool</td>
-                <td>Dataset status</td>
-
-              </tr>
-              <tr>
-                <td>name</td>
-                <td>String</td>
-                <td>Date of birth of the pet</td>
-                
-              </tr>
-              <tr>
-                <td>nic</td>
-                <td>Img</td>
-                <td>NIC of the user</td>
-                
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Integer</td>
-                <td>Registered email</td>
-                
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Integer</td>
-                <td>Password for the account</td>
-               
-              </tr>
-               <tr>
-                <td>is_deleted</td>
-                <td>bool</td>
-                <td>Showing deleted status</td>
-               
-              </tr>
-
             </tbody>
           </table>   
+          <h5><u>Example Response</u></h5>
+           <pre class = "ruby"><code class = "source code ruby source lang=">
+            {
+                "status": true,
+                "data": {
+                    "trackedData": [
+                        {
+                            "_id": "66deb0572834c93594329327",
+                            "latitude": "NOT_CONNECTED",
+                            "longitude": "NOT_CONNECTED",
+                            "speed": "NOT_CONNECTED",
+                            "acceleration_x": "-0.3408203125",
+                            "acceleration_y": "-0.22802734375",
+                            "acceleration_z": "-0.90234375",
+                            "string_data": "{\"latitude\":\"NOT_CONNECTED\",\"longitude\":\"NOT_CONNECTED\",\"speed\":\"NOT_CONNECTED\",\"timestamp\":\"NOT_CONNECTED\",\"ambient_temperature\":30.75,\"Object_temperature\":27.23,\"acceleration_x\":-0.3408203125,\"acceleration_y\":-0.22802734375,\"acceleration_z\":-0.90234375,\"angle_X\":-13.300798648917082,\"angle_Y\":20.1124259433319}",
+                            "created_at": "2024-09-09T08:22:47.785Z",
+                            "updated_at": "2024-09-09T08:22:47.785Z",
+                            "__v": 0
+                        },
+                        ],
+                    "recordsTotal": 1,
+                    "recordsFiltered": 1
+                }
+            }
+           </code>
 
         </section>
 
